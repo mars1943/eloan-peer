@@ -1,5 +1,5 @@
 # eloan-peer
-一、fabric1.0 环境部署所需软件清单
+一、环境部署所需软件清单
 •	Docker - v1.12 or higher
 •	Docker Compose - v1.8 or higher
 •	Go - 1.7 or higher
