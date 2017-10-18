@@ -69,8 +69,8 @@ newgrp - docker 或者 pkill X
 
 2.3）还原docker镜像
 1、安装rar解压软件
-   sudo apt-get install rar
-   ln -fs /usr/bin/rar /usr/bin/unrar
+a) sudo apt-get install rar
+b) ln -fs /usr/bin/rar /usr/bin/unrar
 
 2、从github上克隆文件(如未安装git,可执行sudo apt-get install git进行git安装)
 进入ubutu根目录，假设ubuntu用户名为rblockchain
