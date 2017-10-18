@@ -67,7 +67,36 @@ sudo service docker restart
 group 或者重启 X 会话
 newgrp - docker 或者 pkill X
 
-docker compose部署
+2.3）还原docker镜像
+1、安装rar解压软件
+   sudo apt-get install rar
+   ln -fs /usr/bin/rar /usr/bin/unrar
+
+2、从github上克隆文件(如未安装git,可执行sudo apt-get install git进行git安装)
+进入ubutu根目录，假设ubuntu用户名为rblockchain
+a)  cd /home/rblockchain下执行
+b)  git clone https://github.com/rblockchain/eloan-peer.git
+
+3、解压从github上克隆的镜像
+a)  在cd /home/rblockchain下执行
+b)  rar x FileName.rar
+
+注意：从fabric-baseimage.part01.tar至fabric-baseimage.part07.tar，仅需任意解压一个rar文件即可。例如：rar x fabric-baseimage.part01.tar。同理，从fabric-javaenv.part01.tar至fabric-baseimage.part05.tar也仅需解压一个即可
+
+4、打包解压出的文件
+rar文件解压完毕后，需要进入到解压生成的文件夹内部执行命令：
+a)  在cd /home/rblockchai/fabric-javaenv下执行
+b)  tar cvf fabric-javaenv.tar *
+同理，fabric-baseimage、fabric-baseos、fabric-peer相对应进入到fabric-baseimage、fabric-baseos、fabric-peer下执行tar命令生成相应的.tar包
+
+5、还原docker镜像
+a)  cd /home/rblockchai/fabric-javaenv
+b)  docker load<fabric-javaenv.tar
+同理，fabric-baseimage、fabric-baseos、fabric-peer也需执行docker load命令还原出docker镜像
+6、检查镜像是否导出成功
+执行docker images命令，确认镜像是否导出成功
+
+2.4）docker compose部署
 参考文档：http://blog.csdn.net/yl_1314/article/details/53761049
 
 1、root权限下执行：curl -L "https://github.com/docker/compose/releases/download/1.9.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
