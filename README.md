@@ -105,3 +105,6 @@ b)  docker load<fabric-javaenv.tar
 
 3、检查docker compose 是否部署正常
 docker-compose version
+
+4、将sdkintegration.rar拷贝到opt/gopath/src/github.com/hyperledger/fabric下并解压，解压完成后在opt/gopath/src/github.com/hyperledger/fabric/sdkintegration/下执行命令：docker-compose up -d --force-recreate
+
